@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" style="width: 100%; height: 100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unity Debug Server</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+        </script>
+
+    <style>
+        /* reused from other projects */
+
+        * {
+            text-align: center;
+        }
+
+        .center {
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #main {
+            height: min-content;
+            z-index: 3;
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+
+<body style="width: 100%; height: 100%; background-color: #5f9ea0;">
+    <div class="center card w-50" id="main" style="max-height: 80%;">
+        <div id="card-header" class="card-header">
+            <b>Unity XR Debug Server</b>
+        </div>
+        <div id="card-body" class="card-body" style="height: min-content;">
+            <div id="token-prompt">
+                Don't have an authtoken?
+                <br />
+                Sign up for one <a href="https://dashboard.ngrok.com/signup" target="_blank">here</a>.
+                <br />
+                Still doesn't work? Double check you've <b>verified your email</b>.
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="ngrok" placeholder="Ngrok" autofocus autocomplete="off"
+                    autocapitalize="off" />
+                <label for="ngrok" id="ngrok-label">Ngrok Auth Token</label>
+            </div>
+            <br />
+            <div id="changeout">
+                <button class="btn btn-primary" id="start-srv" disabled>Start Server</button>
+            </div>
+        </div>
+    </div>
+    <script src="client.js"></script>
+</body>
