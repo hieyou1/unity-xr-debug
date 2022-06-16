@@ -20,7 +20,7 @@ const startServer = async (DEBUG_KEY, ngrokAuth) => {
         }
     };
 
-    electronAPI.onDebugLog(log);
+    electronAPI.onDebugLog((e, logStr) => log(logStr));
 
     id("ngrok").disabled = true;
     id("ngrok").value = await electronAPI.startServer(DEBUG_KEY, ngrokAuth);
